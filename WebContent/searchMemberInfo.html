@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		border: 2px solid black;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<form id="searchId" method="post" action="member.do">
+			<input type="hidden" name="job" value="findId">
+			<span>아이디 찾기</span><br><br>
+			<span><input type="text" name="idMail" placeholder="가입된 이메일" class="input idEmailInput"></span><br><br>
+			<span><button type="button" class="btn ok idOk">확인</button><button type="button" class="btn cancel idCancel">취소</button></span>
+		</form>
+	</div><br><br>
+	<div>
+		<form id="searchPwd" method="post" action="member.do">
+			<input type="hidden" name="job" value="findPwd">
+			<span>비밀번호 찾기</span><br><br>
+			<span><input type="text" name="id" placeholder="아이디" class="input pwdIdInput"></span><br>
+			<span><input type="text" name="pwdMail" placeholder="가입된 이메일" class="input pwdEmailInput"></span><br><br>
+			<span><button type="button"class="btn ok pwdOk">확인</button><button type="button" class="btn cancel pwdCancel">취소</button></span>
+		</form>		
+	</div>
+</body>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	$(".idOk").click(function(e) {
+		if($(".idEmailInput").val().trim() == "") {
+			alert("이메일을 입력해주세요!");
+		}
+		else {
+			$("#searchId").submit();
+		}
+	})
+	$(".cancel").click(function(e) {
+		location.href = "index.html";
+	})
+	$(".pwdOk").click(function(e) {
+		if($(".pwdIdInput").val().trim() == "") {
+			alert("아이디를 입력해주세요!");
+		}
+		else if($(".pwdEmailInput").val().trim() == "") {
+			alert("이메일을 입력해주세요!");
+		}
+		else {
+			$("#searchPwd").submit();
+		}
+	})
+</script>
+</html>

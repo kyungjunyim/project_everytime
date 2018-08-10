@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.formField{
+		border:2px solid black;
+		width : 300px;
+		height:auto;
+	}
+</style>
+</head>
+<body>
+<form class="formField" id="formField" method="post" action="member.do">
+		<input type="hidden" name="job" value="regist">
+		<div>
+			<div class="formTitle">회원 정보 입력</div>
+			<div>
+				아이디 : <input type="text" class="id" name="id" id="id" placeholder="아이디입력">
+				<div id="textId"></div>
+			</div>
+			<div>
+				비밀번호 : <input type="password" class="pwd" name="pwd" id="pwd">
+				<div id="textPwd"></div>
+			</div>
+			<div>
+				비밀번호 확인 : <input type="password" class="pwd2" name="pwd2" id="pwd2">
+				<div id="textPwd2"></div>
+			</div>
+			<div>
+				이메일 : <input type="text" class="mail" name="mail" id="mail"
+					placeholder="이메일입력">
+				<div id="textMail"></div>
+			</div>
+			<div>
+				이름 : <input type="text" class="name" name="name" id="name"
+					placeholder="이름입력">
+				<div id="textName"></div>
+			</div>
+			<div>
+				닉네임 : <input type="text" class="nickName" name="nickName" id="nickName"
+					placeholder="닉네임입력">
+				<div id="textNickName"></div>
+			</div>
+		</div>
+		<div>
+			<button type="button" class="register" name="register" id="register">등록하기</button>
+			<button type="button" class="cancel" name="cancel" id="cancel">취소하기</button>
+		</div>
+
+	</form>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/registCheck.js"></script>
+</body>
+</html>
